@@ -410,7 +410,7 @@ example_conversion <- example_conversion %>% dplyr::select(-c(geneid)) %>% reloc
 knitr::kable(example_conversion)
 ```
 
-We can now annotate our heatmap with downregulated DEGs's with the over-represented terms. However keep in mind that these Geneid will be over-represented by other terms. A good was to find that overlap is using a network graph of the enriched terms and determining the centrality of that network and which node (term) has the most edges (DEGs).
+We can now annotate our heatmap's downregulated DEGs's over-represented terms. However keep in mind that these Geneids will be over-represented by other terms. A good was to find that overlap is using a network graph of the enriched terms and determining the centrality of that network and which node (term) has the most edges (DEGs).
 
 # Future Work
 

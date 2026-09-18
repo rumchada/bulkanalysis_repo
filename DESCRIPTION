@@ -45,7 +45,6 @@ Suggests:
     tidyverse,
     stringr,
     readr,
-    utils,
-    glue
+    utils
 VignetteBuilder: knitr
 Config/testthat/edition: 3

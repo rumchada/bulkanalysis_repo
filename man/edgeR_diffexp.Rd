@@ -51,7 +51,7 @@ the experiment.
 
 OUTPUTS:
 
-A list of data frames containing every possible combination of binary
+A list of data frames containing each possible combination of binary
 comparisons (control vs. experimental group) within the supplied
 metadata.
 

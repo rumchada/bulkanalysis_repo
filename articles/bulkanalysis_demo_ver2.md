@@ -386,7 +386,10 @@ covid19_ds1_analysis <- run_de_pipeline(
                                 deg_pval_adj_thresh = 0.05, 
                                 vol_plot_lower_xlim = -10, 
                                 vol_plot_upper_xlim = 10, 
-                                cartesian_step = 5, 
+                                cartesian_step = 5,
+                                #WARNING: KEEP THIS BOOLEAN FALSE
+                                #TAKES REALLY SLOW TO CONVERT ORA IDS ON MAC
+                                ora_convert_ids = FALSE,
                                 ora_pval_adj_threshold = 0.10,
                                 orgdb = org.Hs.eg.db,
                                 ensembl_dataset = "hsapiens_gene_ensembl"
@@ -418,9 +421,10 @@ covid19_ds1_analysis <- run_de_pipeline(
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 1 failed: biomaRt error: looks like we're connecting to incompatible version of BioMart.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.
+#> Look at ?useEnsembl for details on how to try a mirror site.
 #> 'select()' returned 1:many mapping between keys and columns
 #> Comparison:convalescent vs covid19 has 1407 UNIQUE DEGs
 #> 
@@ -589,6 +593,99 @@ covid19_ds1_analysis$ora_down_raw$enrichgo_visuals$`healthy-covid19`
     #> $ora_pvalue_ranked[[2]]
     #> ORA Results Ranked by PValue: healthy-covid19.png
 
+#### Unpacked Over-represented Terms
+
+``` r
+
+library(org.Hs.eg.db)
+ora_results <- covid19_ds1_analysis$unpacked_results_down$`healthy-covid19`
+
+example <- ora_results$`B cell mediated immunity`[1:10, ] %>% dplyr::select(-c(gene_desc.y,logCPM, "F"))
+
+
+conversion_table <- gene_id_converter_ver2(example$geneid,
+                       from_type = 'ensembl',
+                       to_type = 'symbol',
+                       org_db = org.Hs.eg.db,
+                       ensembl_dataset = "hsapiens_gene_ensembl"
+)
+#> biomaRt attempt 1 of 2...
+#>   -> biomaRt attempt 1 failed: Failed to perform HTTP request.
+#> biomaRt attempt 2 of 2...
+#>   -> biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.
+#> Look at ?useEnsembl for details on how to try a mirror site.
+#> 'select()' returned 1:many mapping between keys and columns
+colnames(conversion_table)[1] <- "geneid"
+
+knitr::kable(example)
+```
+
+| gene_desc.x | geneid | log2foldchange | PValue | p.val_adj | color |
+|:---|:---|---:|---:|---:|:---|
+| B cell mediated immunity | ENSG00000232216 | -3.787972 | 3.0e-07 | 0.0059319 | Downregulated |
+| B cell mediated immunity | ENSG00000211968 | -4.382856 | 1.0e-07 | 0.0018654 | Downregulated |
+| B cell mediated immunity | ENSG00000280411 | -3.881083 | 2.0e-07 | 0.0047027 | Downregulated |
+| B cell mediated immunity | ENSG00000274576 | -4.874189 | 2.0e-07 | 0.0034783 | Downregulated |
+| B cell mediated immunity | ENSG00000270550 | -3.832882 | 0.0e+00 | 0.0002844 | Downregulated |
+| B cell mediated immunity | ENSG00000211972 | -2.945148 | 1.0e-07 | 0.0028573 | Downregulated |
+| B cell mediated immunity | ENSG00000211950 | -5.726270 | 0.0e+00 | 0.0000778 | Downregulated |
+| B cell mediated immunity | ENSG00000211937 | -3.489354 | 2.0e-07 | 0.0043644 | Downregulated |
+| B cell mediated immunity | ENSG00000211955 | -3.102032 | 1.5e-06 | 0.0338385 | Downregulated |
+| B cell mediated immunity | ENSG00000162747 | -6.308525 | 0.0e+00 | 0.0000831 | Downregulated |
+
+``` r
+
+knitr::kable(conversion_table)
+```
+
+| geneid          | external_gene_name |
+|:----------------|:-------------------|
+| ENSG00000232216 | IGHV3-43           |
+| ENSG00000211968 | IGHV1-58           |
+| ENSG00000280411 | IGHV1-69D          |
+| ENSG00000274576 | IGHV2-70           |
+| ENSG00000270550 | IGHV3-30           |
+| ENSG00000211972 | IGHV3-66           |
+| ENSG00000211950 | IGHV1-24           |
+| ENSG00000211937 | IGHV2-5            |
+| ENSG00000211955 | IGHV3-33           |
+| ENSG00000162747 | FCGR3B             |
+
+``` r
+
+#We could also loop an individual function such as gene_id_converter_ver2
+#to fix the unconvertered DEGs within the ORA analysis
+```
+
+``` r
+
+example_conversion <- dplyr::left_join(example, conversion_table, by = "geneid")
+
+example_conversion <- example_conversion %>% dplyr::select(-c(geneid)) %>% relocate(external_gene_name, .after = gene_desc.x)
+
+knitr::kable(example_conversion)
+```
+
+| gene_desc.x | external_gene_name | log2foldchange | PValue | p.val_adj | color |
+|:---|:---|---:|---:|---:|:---|
+| B cell mediated immunity | IGHV3-43 | -3.787972 | 3.0e-07 | 0.0059319 | Downregulated |
+| B cell mediated immunity | IGHV1-58 | -4.382856 | 1.0e-07 | 0.0018654 | Downregulated |
+| B cell mediated immunity | IGHV1-69D | -3.881083 | 2.0e-07 | 0.0047027 | Downregulated |
+| B cell mediated immunity | IGHV2-70 | -4.874189 | 2.0e-07 | 0.0034783 | Downregulated |
+| B cell mediated immunity | IGHV3-30 | -3.832882 | 0.0e+00 | 0.0002844 | Downregulated |
+| B cell mediated immunity | IGHV3-66 | -2.945148 | 1.0e-07 | 0.0028573 | Downregulated |
+| B cell mediated immunity | IGHV1-24 | -5.726270 | 0.0e+00 | 0.0000778 | Downregulated |
+| B cell mediated immunity | IGHV2-5 | -3.489354 | 2.0e-07 | 0.0043644 | Downregulated |
+| B cell mediated immunity | IGHV3-33 | -3.102032 | 1.5e-06 | 0.0338385 | Downregulated |
+| B cell mediated immunity | FCGR3B | -6.308525 | 0.0e+00 | 0.0000831 | Downregulated |
+
+We can now annotate our heatmap with downregulated DEGs’s with the
+over-represented terms. However keep in mind that these Geneid will be
+over-represented by other terms. A good was to find that overlap is
+using a network graph of the enriched terms and determining the
+centrality of that network and which node (term) has the most edges
+(DEGs).
+
 ## Future Work
 
 Implement GSEA
@@ -599,7 +696,9 @@ New ORA visuals:
 
 - Radial Upset Plot,
 
-- ORA network visual for centrality.
+- ORA network visual for centrality,
+
+- Make Unpacking Optional
 
 ## Citations
 

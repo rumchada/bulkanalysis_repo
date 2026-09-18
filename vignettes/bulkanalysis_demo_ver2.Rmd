@@ -18,6 +18,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+```{r}
+#devtools::install_github("https://github.com/rumchada/bulkanalysis_repo")
+```
+
+
 ```{r setup}
 library(bulkanalysis)
 ```

@@ -218,7 +218,7 @@ enrichgo_unpack_ver3 <- function(
       if (convert == FALSE) {
         pathway_genenames <- pathway_tibble
       } else {
-        pathway_genenames <- bulk_analysis::gene_id_converter_ver2(
+        pathway_genenames <- bulkanalysis::gene_id_converter_ver2(
           pathway_tibble$geneid,
           from_type = from_type,
           to_type = to_type,

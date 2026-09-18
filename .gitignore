@@ -1,0 +1,58 @@
+# GEO / sequencing data
+GSE*/
+*.gz
+*.tar
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.sam
+*.cram
+*.bai
+*.csi
+
+# Genomics formats
+*.vcf
+*.vcf.gz
+*.bcf
+*.bed
+*.bw
+*.bigWig
+# Results folders
+results/
+output/
+downstream_results/
+post_processed_data/
+Project_2/GDCdata/
+Project_1/downstream_results/*.RData
+
+
+# R / Python junk
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.log
+*.tmp
+*.temp
+*.rds
+*.Rproj.user
+*.pdf
+*.docx
+*.RDataTmp*
+*Rproj.user/
+
+
+
+#images
+*.png
+*.jpeg
+*.pdf
+
+# macOS
+*.DS_Store
+
+EOF

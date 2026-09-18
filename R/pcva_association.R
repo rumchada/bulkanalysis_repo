@@ -3,7 +3,7 @@
 #' @name pc_var_association
 #'
 #' @description
-#' Quantifies the association between sample-level metadata variables and
+#' Quantifies the association between sample-level metadata covariates and factors and
 #' principal components (PCs) derived from a bulk RNA-seq expression dataset.
 #' The function evaluates both categorical variables (covariates) and continuous
 #' variables across the top principal components and returns a matrix of

@@ -171,7 +171,7 @@ Per transcript counts of RNA-seq exhibit a mean-variance relationship ([hetrosce
 
 **Log normalization**: The typical distribution of bulk-RNAseq data follows a Poisson (Var = mean) or a Negative Binomial Distribution (Var \> Mean) For data containing a large amount of zeros, the log transformation serves to minimize the frequency of zeroes relative to transcripts with counts \>= 1. This will help to visualize the data though a normal distribution. This is typcial are typical for scRNA-Seq and ST data. To avoid taking the log of 0, it is common to add a +1 pseudo value.
 
-More information of [Normalization](https://www.youtube.com/watch?v=u3395drEfrs&list=PLg0JKLUfmkdkIr-9hvFLY1O1JRqOdjTSW)
+More information on [Normalization](https://www.youtube.com/watch?v=u3395drEfrs&list=PLg0JKLUfmkdkIr-9hvFLY1O1JRqOdjTSW)
 
 **Note**: These transformations are not used within the differential expression analysis. This is because packages such as EdgeR and DESeq2 are built to take into account for the typical Poisson or Negative Binomial distribution.
 
@@ -394,3 +394,7 @@ New ORA visuals:
 2.  Wu T, Hu E, Xu S, Chen M, Guo P, Dai Z, Feng T, Zhou L, Tang W, Zhan L, Fu x, Liu S, Bo X, Yu G (2021). “clusterProfiler 4.0: A universal enrichment tool for interpreting omics data.” *The Innovation*, **2**(3), 100141.[doi:10.1016/j.xinn.2021.100141](https://doi.org/10.1016/j.xinn.2021.100141).
 3.  Love MI, Huber W, Anders S (2014).“Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.”*Genome Biology*, **15**, 550.[doi:10.1186/s13059-014-0550-8](https://doi.org/10.1186/s13059-014-0550-8).
 4.  Minghan,.L , Yuqing,.S, Yizhou,.T, Yuefan,.L, Weidong,.T, " Global Transcriptomic analysis of PBMC derived from COVID-19 acute-severe patients and convalescents", (May, 2022),PRJNA837285; GEO: GSE202805.
+
+### Contact
+
+gbolden101\@gmail.com

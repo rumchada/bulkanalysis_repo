@@ -688,10 +688,9 @@ Ensembl dataset used for annotation. For example,
 <span><span class="co">#&gt; Comparison:convalescent vs covid19 has 1409 DEGs</span></span>
 <span><span class="co">#&gt; Comparison:convalescent vs covid19 has 1409 DEGs</span></span>
 <span><span class="co">#&gt; biomaRt attempt 1 of 2...</span></span>
-<span><span class="co">#&gt;   -&gt; biomaRt attempt 1 failed: biomaRt error: looks like we're connecting to incompatible version of BioMart.</span></span>
+<span><span class="co">#&gt;   -&gt; biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.</span></span>
 <span><span class="co">#&gt; biomaRt attempt 2 of 2...</span></span>
-<span><span class="co">#&gt;   -&gt; biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.</span></span>
-<span><span class="co">#&gt; Look at ?useEnsembl for details on how to try a mirror site.</span></span>
+<span><span class="co">#&gt;   -&gt; biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.</span></span>
 <span><span class="co">#&gt; 'select()' returned 1:many mapping between keys and columns</span></span>
 <span><span class="co">#&gt; Comparison:convalescent vs covid19 has 1407 UNIQUE DEGs</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -955,11 +954,10 @@ in an over-represented term.</p>
 <span>                       ensembl_dataset <span class="op">=</span> <span class="st">"hsapiens_gene_ensembl"</span></span>
 <span><span class="op">)</span></span>
 <span><span class="co">#&gt; biomaRt attempt 1 of 2...</span></span>
-<span><span class="co">#&gt;   -&gt; biomaRt attempt 1 failed: Failed to perform HTTP request.</span></span>
+<span><span class="co">#&gt;   -&gt; biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.</span></span>
 <span><span class="co">#&gt; biomaRt attempt 2 of 2...</span></span>
-<span><span class="co">#&gt;   -&gt; biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.</span></span>
-<span><span class="co">#&gt; Look at ?useEnsembl for details on how to try a mirror site.</span></span>
-<span><span class="co">#&gt; 'select()' returned 1:many mapping between keys and columns</span></span>
+<span><span class="co">#&gt;   -&gt; biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.</span></span>
+<span><span class="co">#&gt; 'select()' returned 1:1 mapping between keys and columns</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">conversion_table</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"geneid"</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="va">example</span><span class="op">)</span></span></code></pre></div>
@@ -968,9 +966,9 @@ in an over-represented term.</p>
 <col width="28%">
 <col width="18%">
 <col width="17%">
-<col width="9%">
+<col width="8%">
 <col width="11%">
-<col width="15%">
+<col width="16%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">gene_desc.x</th>
@@ -983,82 +981,82 @@ in an over-represented term.</p>
 <tbody>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000232216</td>
-<td align="right">-3.787972</td>
-<td align="right">3.0e-07</td>
-<td align="right">0.0059319</td>
-<td align="left">Downregulated</td>
-</tr>
-<tr class="even">
-<td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000211968</td>
-<td align="right">-4.382856</td>
-<td align="right">1.0e-07</td>
-<td align="right">0.0018654</td>
-<td align="left">Downregulated</td>
-</tr>
-<tr class="odd">
-<td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000280411</td>
-<td align="right">-3.881083</td>
-<td align="right">2.0e-07</td>
-<td align="right">0.0047027</td>
+<td align="left">ENSG00000211956</td>
+<td align="right">-4.677133</td>
+<td align="right">0e+00</td>
+<td align="right">0.0000141</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
 <td align="left">ENSG00000274576</td>
 <td align="right">-4.874189</td>
-<td align="right">2.0e-07</td>
+<td align="right">2e-07</td>
 <td align="right">0.0034783</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000270550</td>
-<td align="right">-3.832882</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0002844</td>
+<td align="left">ENSG00000211970</td>
+<td align="right">-3.377058</td>
+<td align="right">5e-07</td>
+<td align="right">0.0101461</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
+<td align="left">B cell mediated immunity</td>
+<td align="left">ENSG00000211959</td>
+<td align="right">-3.320425</td>
+<td align="right">0e+00</td>
+<td align="right">0.0008639</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="odd">
+<td align="left">B cell mediated immunity</td>
+<td align="left">ENSG00000211942</td>
+<td align="right">-4.337260</td>
+<td align="right">4e-07</td>
+<td align="right">0.0077142</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="even">
+<td align="left">B cell mediated immunity</td>
+<td align="left">ENSG00000211896</td>
+<td align="right">-4.433906</td>
+<td align="right">1e-07</td>
+<td align="right">0.0012100</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="odd">
 <td align="left">B cell mediated immunity</td>
 <td align="left">ENSG00000211972</td>
 <td align="right">-2.945148</td>
-<td align="right">1.0e-07</td>
+<td align="right">1e-07</td>
 <td align="right">0.0028573</td>
 <td align="left">Downregulated</td>
 </tr>
-<tr class="odd">
-<td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000211950</td>
-<td align="right">-5.726270</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0000778</td>
-<td align="left">Downregulated</td>
-</tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000211937</td>
-<td align="right">-3.489354</td>
-<td align="right">2.0e-07</td>
-<td align="right">0.0043644</td>
+<td align="left">ENSG00000211947</td>
+<td align="right">-3.092955</td>
+<td align="right">0e+00</td>
+<td align="right">0.0001148</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000211955</td>
-<td align="right">-3.102032</td>
-<td align="right">1.5e-06</td>
-<td align="right">0.0338385</td>
+<td align="left">ENSG00000211973</td>
+<td align="right">-3.865969</td>
+<td align="right">0e+00</td>
+<td align="right">0.0006687</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
-<td align="left">ENSG00000162747</td>
-<td align="right">-6.308525</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0000831</td>
+<td align="left">ENSG00000276775</td>
+<td align="right">-3.403321</td>
+<td align="right">0e+00</td>
+<td align="right">0.0005561</td>
 <td align="left">Downregulated</td>
 </tr>
 </tbody>
@@ -1072,44 +1070,44 @@ in an over-represented term.</p>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">ENSG00000232216</td>
-<td align="left">IGHV3-43</td>
-</tr>
-<tr class="even">
-<td align="left">ENSG00000211968</td>
-<td align="left">IGHV1-58</td>
-</tr>
-<tr class="odd">
-<td align="left">ENSG00000280411</td>
-<td align="left">IGHV1-69D</td>
+<td align="left">ENSG00000211956</td>
+<td align="left">IGHV4-34</td>
 </tr>
 <tr class="even">
 <td align="left">ENSG00000274576</td>
 <td align="left">IGHV2-70</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000270550</td>
-<td align="left">IGHV3-30</td>
+<td align="left">ENSG00000211970</td>
+<td align="left">IGHV4-61</td>
 </tr>
 <tr class="even">
+<td align="left">ENSG00000211959</td>
+<td align="left">IGHV4-39</td>
+</tr>
+<tr class="odd">
+<td align="left">ENSG00000211942</td>
+<td align="left">IGHV3-13</td>
+</tr>
+<tr class="even">
+<td align="left">ENSG00000211896</td>
+<td align="left">IGHG1</td>
+</tr>
+<tr class="odd">
 <td align="left">ENSG00000211972</td>
 <td align="left">IGHV3-66</td>
 </tr>
-<tr class="odd">
-<td align="left">ENSG00000211950</td>
-<td align="left">IGHV1-24</td>
-</tr>
 <tr class="even">
-<td align="left">ENSG00000211937</td>
-<td align="left">IGHV2-5</td>
+<td align="left">ENSG00000211947</td>
+<td align="left">IGHV3-21</td>
 </tr>
 <tr class="odd">
-<td align="left">ENSG00000211955</td>
-<td align="left">IGHV3-33</td>
+<td align="left">ENSG00000211973</td>
+<td align="left">IGHV1-69</td>
 </tr>
 <tr class="even">
-<td align="left">ENSG00000162747</td>
-<td align="left">FCGR3B</td>
+<td align="left">ENSG00000276775</td>
+<td align="left">IGHV4-4</td>
 </tr>
 </tbody>
 </table>
@@ -1125,10 +1123,10 @@ in an over-represented term.</p>
 <table class="table">
 <colgroup>
 <col width="27%">
-<col width="20%">
+<col width="21%">
 <col width="16%">
-<col width="8%">
-<col width="10%">
+<col width="7%">
+<col width="11%">
 <col width="15%">
 </colgroup>
 <thead><tr class="header">
@@ -1142,88 +1140,88 @@ in an over-represented term.</p>
 <tbody>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">IGHV3-43</td>
-<td align="right">-3.787972</td>
-<td align="right">3.0e-07</td>
-<td align="right">0.0059319</td>
-<td align="left">Downregulated</td>
-</tr>
-<tr class="even">
-<td align="left">B cell mediated immunity</td>
-<td align="left">IGHV1-58</td>
-<td align="right">-4.382856</td>
-<td align="right">1.0e-07</td>
-<td align="right">0.0018654</td>
-<td align="left">Downregulated</td>
-</tr>
-<tr class="odd">
-<td align="left">B cell mediated immunity</td>
-<td align="left">IGHV1-69D</td>
-<td align="right">-3.881083</td>
-<td align="right">2.0e-07</td>
-<td align="right">0.0047027</td>
+<td align="left">IGHV4-34</td>
+<td align="right">-4.677133</td>
+<td align="right">0e+00</td>
+<td align="right">0.0000141</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
 <td align="left">IGHV2-70</td>
 <td align="right">-4.874189</td>
-<td align="right">2.0e-07</td>
+<td align="right">2e-07</td>
 <td align="right">0.0034783</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">IGHV3-30</td>
-<td align="right">-3.832882</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0002844</td>
+<td align="left">IGHV4-61</td>
+<td align="right">-3.377058</td>
+<td align="right">5e-07</td>
+<td align="right">0.0101461</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
+<td align="left">B cell mediated immunity</td>
+<td align="left">IGHV4-39</td>
+<td align="right">-3.320425</td>
+<td align="right">0e+00</td>
+<td align="right">0.0008639</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="odd">
+<td align="left">B cell mediated immunity</td>
+<td align="left">IGHV3-13</td>
+<td align="right">-4.337260</td>
+<td align="right">4e-07</td>
+<td align="right">0.0077142</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="even">
+<td align="left">B cell mediated immunity</td>
+<td align="left">IGHG1</td>
+<td align="right">-4.433906</td>
+<td align="right">1e-07</td>
+<td align="right">0.0012100</td>
+<td align="left">Downregulated</td>
+</tr>
+<tr class="odd">
 <td align="left">B cell mediated immunity</td>
 <td align="left">IGHV3-66</td>
 <td align="right">-2.945148</td>
-<td align="right">1.0e-07</td>
+<td align="right">1e-07</td>
 <td align="right">0.0028573</td>
 <td align="left">Downregulated</td>
 </tr>
-<tr class="odd">
-<td align="left">B cell mediated immunity</td>
-<td align="left">IGHV1-24</td>
-<td align="right">-5.726270</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0000778</td>
-<td align="left">Downregulated</td>
-</tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
-<td align="left">IGHV2-5</td>
-<td align="right">-3.489354</td>
-<td align="right">2.0e-07</td>
-<td align="right">0.0043644</td>
+<td align="left">IGHV3-21</td>
+<td align="right">-3.092955</td>
+<td align="right">0e+00</td>
+<td align="right">0.0001148</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="odd">
 <td align="left">B cell mediated immunity</td>
-<td align="left">IGHV3-33</td>
-<td align="right">-3.102032</td>
-<td align="right">1.5e-06</td>
-<td align="right">0.0338385</td>
+<td align="left">IGHV1-69</td>
+<td align="right">-3.865969</td>
+<td align="right">0e+00</td>
+<td align="right">0.0006687</td>
 <td align="left">Downregulated</td>
 </tr>
 <tr class="even">
 <td align="left">B cell mediated immunity</td>
-<td align="left">FCGR3B</td>
-<td align="right">-6.308525</td>
-<td align="right">0.0e+00</td>
-<td align="right">0.0000831</td>
+<td align="left">IGHV4-4</td>
+<td align="right">-3.403321</td>
+<td align="right">0e+00</td>
+<td align="right">0.0005561</td>
 <td align="left">Downregulated</td>
 </tr>
 </tbody>
 </table>
-<p>We can now annotate our heatmap with downregulated DEGs’s with the
-over-represented terms. However keep in mind that these Geneid will be
+<p>We can now annotate our heatmap’s downregulated DEGs’s
+over-represented terms. However keep in mind that these Geneids will be
 over-represented by other terms. A good was to find that overlap is
 using a network graph of the enriched terms and determining the
 centrality of that network and which node (term) has the most edges

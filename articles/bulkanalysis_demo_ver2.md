@@ -421,10 +421,9 @@ covid19_ds1_analysis <- run_de_pipeline(
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: biomaRt error: looks like we're connecting to incompatible version of BioMart.
+#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.
-#> Look at ?useEnsembl for details on how to try a mirror site.
+#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
 #> 'select()' returned 1:many mapping between keys and columns
 #> Comparison:convalescent vs covid19 has 1407 UNIQUE DEGs
 #> 
@@ -610,11 +609,10 @@ conversion_table <- gene_id_converter_ver2(example$geneid,
                        ensembl_dataset = "hsapiens_gene_ensembl"
 )
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: Failed to perform HTTP request.
+#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: Your query has been redirected to https://status.ensembl.org indicating this Ensembl service is currently unavailable.
-#> Look at ?useEnsembl for details on how to try a mirror site.
-#> 'select()' returned 1:many mapping between keys and columns
+#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
+#> 'select()' returned 1:1 mapping between keys and columns
 colnames(conversion_table)[1] <- "geneid"
 
 knitr::kable(example)
@@ -622,16 +620,16 @@ knitr::kable(example)
 
 | gene_desc.x | geneid | log2foldchange | PValue | p.val_adj | color |
 |:---|:---|---:|---:|---:|:---|
-| B cell mediated immunity | ENSG00000232216 | -3.787972 | 3.0e-07 | 0.0059319 | Downregulated |
-| B cell mediated immunity | ENSG00000211968 | -4.382856 | 1.0e-07 | 0.0018654 | Downregulated |
-| B cell mediated immunity | ENSG00000280411 | -3.881083 | 2.0e-07 | 0.0047027 | Downregulated |
-| B cell mediated immunity | ENSG00000274576 | -4.874189 | 2.0e-07 | 0.0034783 | Downregulated |
-| B cell mediated immunity | ENSG00000270550 | -3.832882 | 0.0e+00 | 0.0002844 | Downregulated |
-| B cell mediated immunity | ENSG00000211972 | -2.945148 | 1.0e-07 | 0.0028573 | Downregulated |
-| B cell mediated immunity | ENSG00000211950 | -5.726270 | 0.0e+00 | 0.0000778 | Downregulated |
-| B cell mediated immunity | ENSG00000211937 | -3.489354 | 2.0e-07 | 0.0043644 | Downregulated |
-| B cell mediated immunity | ENSG00000211955 | -3.102032 | 1.5e-06 | 0.0338385 | Downregulated |
-| B cell mediated immunity | ENSG00000162747 | -6.308525 | 0.0e+00 | 0.0000831 | Downregulated |
+| B cell mediated immunity | ENSG00000211956 | -4.677133 | 0e+00 | 0.0000141 | Downregulated |
+| B cell mediated immunity | ENSG00000274576 | -4.874189 | 2e-07 | 0.0034783 | Downregulated |
+| B cell mediated immunity | ENSG00000211970 | -3.377058 | 5e-07 | 0.0101461 | Downregulated |
+| B cell mediated immunity | ENSG00000211959 | -3.320425 | 0e+00 | 0.0008639 | Downregulated |
+| B cell mediated immunity | ENSG00000211942 | -4.337260 | 4e-07 | 0.0077142 | Downregulated |
+| B cell mediated immunity | ENSG00000211896 | -4.433906 | 1e-07 | 0.0012100 | Downregulated |
+| B cell mediated immunity | ENSG00000211972 | -2.945148 | 1e-07 | 0.0028573 | Downregulated |
+| B cell mediated immunity | ENSG00000211947 | -3.092955 | 0e+00 | 0.0001148 | Downregulated |
+| B cell mediated immunity | ENSG00000211973 | -3.865969 | 0e+00 | 0.0006687 | Downregulated |
+| B cell mediated immunity | ENSG00000276775 | -3.403321 | 0e+00 | 0.0005561 | Downregulated |
 
 ``` r
 
@@ -640,16 +638,16 @@ knitr::kable(conversion_table)
 
 | geneid          | external_gene_name |
 |:----------------|:-------------------|
-| ENSG00000232216 | IGHV3-43           |
-| ENSG00000211968 | IGHV1-58           |
-| ENSG00000280411 | IGHV1-69D          |
+| ENSG00000211956 | IGHV4-34           |
 | ENSG00000274576 | IGHV2-70           |
-| ENSG00000270550 | IGHV3-30           |
+| ENSG00000211970 | IGHV4-61           |
+| ENSG00000211959 | IGHV4-39           |
+| ENSG00000211942 | IGHV3-13           |
+| ENSG00000211896 | IGHG1              |
 | ENSG00000211972 | IGHV3-66           |
-| ENSG00000211950 | IGHV1-24           |
-| ENSG00000211937 | IGHV2-5            |
-| ENSG00000211955 | IGHV3-33           |
-| ENSG00000162747 | FCGR3B             |
+| ENSG00000211947 | IGHV3-21           |
+| ENSG00000211973 | IGHV1-69           |
+| ENSG00000276775 | IGHV4-4            |
 
 ``` r
 
@@ -668,23 +666,22 @@ knitr::kable(example_conversion)
 
 | gene_desc.x | external_gene_name | log2foldchange | PValue | p.val_adj | color |
 |:---|:---|---:|---:|---:|:---|
-| B cell mediated immunity | IGHV3-43 | -3.787972 | 3.0e-07 | 0.0059319 | Downregulated |
-| B cell mediated immunity | IGHV1-58 | -4.382856 | 1.0e-07 | 0.0018654 | Downregulated |
-| B cell mediated immunity | IGHV1-69D | -3.881083 | 2.0e-07 | 0.0047027 | Downregulated |
-| B cell mediated immunity | IGHV2-70 | -4.874189 | 2.0e-07 | 0.0034783 | Downregulated |
-| B cell mediated immunity | IGHV3-30 | -3.832882 | 0.0e+00 | 0.0002844 | Downregulated |
-| B cell mediated immunity | IGHV3-66 | -2.945148 | 1.0e-07 | 0.0028573 | Downregulated |
-| B cell mediated immunity | IGHV1-24 | -5.726270 | 0.0e+00 | 0.0000778 | Downregulated |
-| B cell mediated immunity | IGHV2-5 | -3.489354 | 2.0e-07 | 0.0043644 | Downregulated |
-| B cell mediated immunity | IGHV3-33 | -3.102032 | 1.5e-06 | 0.0338385 | Downregulated |
-| B cell mediated immunity | FCGR3B | -6.308525 | 0.0e+00 | 0.0000831 | Downregulated |
+| B cell mediated immunity | IGHV4-34 | -4.677133 | 0e+00 | 0.0000141 | Downregulated |
+| B cell mediated immunity | IGHV2-70 | -4.874189 | 2e-07 | 0.0034783 | Downregulated |
+| B cell mediated immunity | IGHV4-61 | -3.377058 | 5e-07 | 0.0101461 | Downregulated |
+| B cell mediated immunity | IGHV4-39 | -3.320425 | 0e+00 | 0.0008639 | Downregulated |
+| B cell mediated immunity | IGHV3-13 | -4.337260 | 4e-07 | 0.0077142 | Downregulated |
+| B cell mediated immunity | IGHG1 | -4.433906 | 1e-07 | 0.0012100 | Downregulated |
+| B cell mediated immunity | IGHV3-66 | -2.945148 | 1e-07 | 0.0028573 | Downregulated |
+| B cell mediated immunity | IGHV3-21 | -3.092955 | 0e+00 | 0.0001148 | Downregulated |
+| B cell mediated immunity | IGHV1-69 | -3.865969 | 0e+00 | 0.0006687 | Downregulated |
+| B cell mediated immunity | IGHV4-4 | -3.403321 | 0e+00 | 0.0005561 | Downregulated |
 
-We can now annotate our heatmap with downregulated DEGs’s with the
-over-represented terms. However keep in mind that these Geneid will be
-over-represented by other terms. A good was to find that overlap is
-using a network graph of the enriched terms and determining the
-centrality of that network and which node (term) has the most edges
-(DEGs).
+We can now annotate our heatmap’s downregulated DEGs’s over-represented
+terms. However keep in mind that these Geneids will be over-represented
+by other terms. A good was to find that overlap is using a network graph
+of the enriched terms and determining the centrality of that network and
+which node (term) has the most edges (DEGs).
 
 ## Future Work
 

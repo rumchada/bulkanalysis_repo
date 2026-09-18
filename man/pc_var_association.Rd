@@ -17,7 +17,7 @@ components as rows and metadata variables as columns.
 A heatmap visualizing the resulting p-value matrix is also generated.
 }
 \description{
-Quantifies the association between sample-level metadata variables and
+Quantifies the association between sample-level metadata covariates and factors and
 principal components (PCs) derived from a bulk RNA-seq expression dataset.
 The function evaluates both categorical variables (covariates) and continuous
 variables across the top principal components and returns a matrix of

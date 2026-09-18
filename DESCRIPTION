@@ -45,7 +45,8 @@ Suggests:
     tidyverse,
     stringr,
     readr,
-    utils
+    utils,
+    TxDb.Hsapiens.UCSC.hg38.knownGene
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 URL: https://rumchada.github.io/bulkanalysis_repo/

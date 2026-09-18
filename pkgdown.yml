@@ -1,0 +1,9 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  bulkanalysis_demo_ver2: bulkanalysis_demo_ver2.html
+last_built: 2026-09-18T20:50Z
+urls:
+  reference: https://rumchada.github.io/bulkanalysis_repo/reference
+  article: https://rumchada.github.io/bulkanalysis_repo/articles

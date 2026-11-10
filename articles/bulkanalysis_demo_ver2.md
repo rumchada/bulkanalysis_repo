@@ -320,16 +320,16 @@ knitr::kable(results_dds1$`healthy-convalescent`[1:10, 1:ncol(healthy_covid19_re
 
 | geneid          | log2foldchange |     logCPM |         F | PValue | p.val_adj |
 |:----------------|---------------:|-----------:|----------:|-------:|----------:|
-| ENSG00000272173 |      -3.758680 |  0.1629976 | 147.29132 |      0 |         0 |
-| ENSG00000200156 |      -4.682367 | -0.0290629 | 112.20243 |      0 |         0 |
-| ENSG00000287190 |      -4.380503 |  1.0329132 | 114.76031 |      0 |         0 |
-| ENSG00000207205 |      -4.077849 | -0.0275487 |  91.80691 |      0 |         0 |
-| ENSG00000111678 |      -3.617110 |  3.3322679 | 118.53750 |      0 |         0 |
-| ENSG00000212195 |      -3.830325 |  1.0317549 |  81.25352 |      0 |         0 |
-| ENSG00000270022 |      -3.805682 |  2.3153486 |  90.55365 |      0 |         0 |
-| ENSG00000200169 |      -3.517921 |  0.2384656 |  76.09676 |      0 |         0 |
-| ENSG00000276216 |      -3.496121 |  0.6214368 |  73.98809 |      0 |         0 |
-| ENSG00000221539 |      -2.292173 |  1.7619859 |  71.95162 |      0 |         0 |
+| ENSG00000272173 |      -3.758680 |  0.1629976 | 147.29125 |      0 |         0 |
+| ENSG00000200156 |      -4.682367 | -0.0290629 | 112.20224 |      0 |         0 |
+| ENSG00000287190 |      -4.380503 |  1.0329132 | 114.75976 |      0 |         0 |
+| ENSG00000207205 |      -4.077849 | -0.0275487 |  91.80680 |      0 |         0 |
+| ENSG00000111678 |      -3.617110 |  3.3322679 | 118.53738 |      0 |         0 |
+| ENSG00000212195 |      -3.830325 |  1.0317549 |  81.25314 |      0 |         0 |
+| ENSG00000270022 |      -3.805681 |  2.3153486 |  90.55314 |      0 |         0 |
+| ENSG00000200169 |      -3.517921 |  0.2384656 |  76.09651 |      0 |         0 |
+| ENSG00000276216 |      -3.496121 |  0.6214368 |  73.98783 |      0 |         0 |
+| ENSG00000221539 |      -2.292173 |  1.7619859 |  71.95112 |      0 |         0 |
 
 ## **Running the whole DE Downstream pipeline**
 
@@ -401,9 +401,9 @@ covid19_ds1_analysis <- run_de_pipeline(
 #> Comparison:healthy vs convalescent has 114 DEGs
 #> Comparison:healthy vs convalescent has 114 DEGs
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 1 failed: HTTP 403 Forbidden.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 2 failed: HTTP 403 Forbidden.
 #> 'select()' returned 1:many mapping between keys and columns
 #> Comparison:healthy vs convalescent has 114 UNIQUE DEGs
 #> Processing: healthy vs covid19
@@ -411,9 +411,9 @@ covid19_ds1_analysis <- run_de_pipeline(
 #> Comparison:healthy vs covid19 has 297 DEGs
 #> Comparison:healthy vs covid19 has 297 DEGs
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 1 failed: HTTP 403 Forbidden.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 2 failed: HTTP 403 Forbidden.
 #> 'select()' returned 1:many mapping between keys and columns
 #> Comparison:healthy vs covid19 has 297 UNIQUE DEGs
 #> Processing: convalescent vs covid19
@@ -421,9 +421,9 @@ covid19_ds1_analysis <- run_de_pipeline(
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> Comparison:convalescent vs covid19 has 1409 DEGs
 #> biomaRt attempt 1 of 2...
-#>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 1 failed: HTTP 403 Forbidden.
 #> biomaRt attempt 2 of 2...
-#>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
+#>   -> biomaRt attempt 2 failed: HTTP 403 Forbidden.
 #> 'select()' returned 1:many mapping between keys and columns
 #> Comparison:convalescent vs covid19 has 1407 UNIQUE DEGs
 #> 
@@ -510,16 +510,16 @@ knitr::kable(demo_results[1:10, 1:ncol(demo_results)])
 
 | geneid | log2foldchange | logCPM | F | PValue | p.val_adj | color |
 |:---|---:|---:|---:|---:|---:|:---|
-| ENSG00000162551 | -9.118798 | 6.856737 | 78.45615 | 0 | 0.0e+00 | Downregulated |
-| ENSG00000133048 | -6.905306 | 5.218843 | 68.07271 | 0 | 0.0e+00 | Downregulated |
-| ENSG00000115884 | -6.160175 | 2.477781 | 60.79484 | 0 | 0.0e+00 | Downregulated |
-| ENSG00000164047 | -6.088636 | 3.020350 | 60.42745 | 0 | 0.0e+00 | Downregulated |
-| ENSG00000118113 | -9.529849 | 5.969254 | 61.74041 | 0 | 1.0e-07 | Downregulated |
-| ENSG00000100985 | -7.470679 | 4.830199 | 56.52675 | 0 | 3.0e-07 | Downregulated |
-| ENSG00000239961 | 2.190019 | 3.949011 | 57.74562 | 0 | 9.0e-07 | Upregulated |
-| ENSG00000124469 | -8.100826 | 5.663755 | 52.63149 | 0 | 1.7e-06 | Downregulated |
-| ENSG00000132386 | 1.754871 | 3.729244 | 55.18782 | 0 | 1.9e-06 | Upregulated |
-| ENSG00000229314 | -5.010021 | 1.539478 | 48.83306 | 0 | 2.1e-06 | Downregulated |
+| ENSG00000162551 | -9.118799 | 6.856737 | 78.45614 | 0 | 0.0e+00 | Downregulated |
+| ENSG00000133048 | -6.905305 | 5.218843 | 68.07241 | 0 | 0.0e+00 | Downregulated |
+| ENSG00000115884 | -6.160175 | 2.477781 | 60.79488 | 0 | 0.0e+00 | Downregulated |
+| ENSG00000164047 | -6.088637 | 3.020350 | 60.42747 | 0 | 0.0e+00 | Downregulated |
+| ENSG00000118113 | -9.529849 | 5.969254 | 61.74086 | 0 | 1.0e-07 | Downregulated |
+| ENSG00000100985 | -7.470679 | 4.830199 | 56.52670 | 0 | 3.0e-07 | Downregulated |
+| ENSG00000239961 | 2.190019 | 3.949011 | 57.74547 | 0 | 9.0e-07 | Upregulated |
+| ENSG00000124469 | -8.100827 | 5.663755 | 52.63182 | 0 | 1.7e-06 | Downregulated |
+| ENSG00000132386 | 1.754871 | 3.729244 | 55.18774 | 0 | 1.9e-06 | Upregulated |
+| ENSG00000229314 | -5.010021 | 1.539478 | 48.83310 | 0 | 2.1e-06 | Downregulated |
 
 **run_de_pipeline outputs**
 
@@ -612,7 +612,7 @@ conversion_table <- gene_id_converter_ver2(example$geneid,
 #>   -> biomaRt attempt 1 failed: HTTP 405 Method Not Allowed.
 #> biomaRt attempt 2 of 2...
 #>   -> biomaRt attempt 2 failed: HTTP 405 Method Not Allowed.
-#> 'select()' returned 1:1 mapping between keys and columns
+#> 'select()' returned 1:many mapping between keys and columns
 colnames(conversion_table)[1] <- "geneid"
 
 knitr::kable(example)
@@ -620,16 +620,16 @@ knitr::kable(example)
 
 | gene_desc.x | geneid | log2foldchange | PValue | p.val_adj | color |
 |:---|:---|---:|---:|---:|:---|
-| B cell mediated immunity | ENSG00000211956 | -4.677133 | 0e+00 | 0.0000141 | Downregulated |
-| B cell mediated immunity | ENSG00000274576 | -4.874189 | 2e-07 | 0.0034783 | Downregulated |
-| B cell mediated immunity | ENSG00000211970 | -3.377058 | 5e-07 | 0.0101461 | Downregulated |
-| B cell mediated immunity | ENSG00000211959 | -3.320425 | 0e+00 | 0.0008639 | Downregulated |
-| B cell mediated immunity | ENSG00000211942 | -4.337260 | 4e-07 | 0.0077142 | Downregulated |
-| B cell mediated immunity | ENSG00000211896 | -4.433906 | 1e-07 | 0.0012100 | Downregulated |
-| B cell mediated immunity | ENSG00000211972 | -2.945148 | 1e-07 | 0.0028573 | Downregulated |
-| B cell mediated immunity | ENSG00000211947 | -3.092955 | 0e+00 | 0.0001148 | Downregulated |
-| B cell mediated immunity | ENSG00000211973 | -3.865969 | 0e+00 | 0.0006687 | Downregulated |
-| B cell mediated immunity | ENSG00000276775 | -3.403321 | 0e+00 | 0.0005561 | Downregulated |
+| B cell mediated immunity | ENSG00000211956 | -4.677133 | 0 | 0.0000141 | Downregulated |
+| B cell mediated immunity | ENSG00000211950 | -5.726270 | 0 | 0.0000778 | Downregulated |
+| B cell mediated immunity | ENSG00000162747 | -6.308525 | 0 | 0.0000831 | Downregulated |
+| B cell mediated immunity | ENSG00000211947 | -3.092955 | 0 | 0.0001148 | Downregulated |
+| B cell mediated immunity | ENSG00000211945 | -3.127753 | 0 | 0.0001503 | Downregulated |
+| B cell mediated immunity | ENSG00000270550 | -3.832882 | 0 | 0.0002844 | Downregulated |
+| B cell mediated immunity | ENSG00000211952 | -3.064888 | 0 | 0.0003376 | Downregulated |
+| B cell mediated immunity | ENSG00000211951 | -4.331467 | 0 | 0.0004491 | Downregulated |
+| B cell mediated immunity | ENSG00000276775 | -3.403321 | 0 | 0.0005561 | Downregulated |
+| B cell mediated immunity | ENSG00000211973 | -3.865969 | 0 | 0.0006687 | Downregulated |
 
 ``` r
 
@@ -639,15 +639,15 @@ knitr::kable(conversion_table)
 | geneid          | external_gene_name |
 |:----------------|:-------------------|
 | ENSG00000211956 | IGHV4-34           |
-| ENSG00000274576 | IGHV2-70           |
-| ENSG00000211970 | IGHV4-61           |
-| ENSG00000211959 | IGHV4-39           |
-| ENSG00000211942 | IGHV3-13           |
-| ENSG00000211896 | IGHG1              |
-| ENSG00000211972 | IGHV3-66           |
+| ENSG00000211950 | IGHV1-24           |
+| ENSG00000162747 | FCGR3B             |
 | ENSG00000211947 | IGHV3-21           |
-| ENSG00000211973 | IGHV1-69           |
+| ENSG00000211945 | IGHV1-18           |
+| ENSG00000270550 | IGHV3-30           |
+| ENSG00000211952 | IGHV4-28           |
+| ENSG00000211951 | IGHV2-26           |
 | ENSG00000276775 | IGHV4-4            |
+| ENSG00000211973 | IGHV1-69           |
 
 ``` r
 
@@ -666,16 +666,16 @@ knitr::kable(example_conversion)
 
 | gene_desc.x | external_gene_name | log2foldchange | PValue | p.val_adj | color |
 |:---|:---|---:|---:|---:|:---|
-| B cell mediated immunity | IGHV4-34 | -4.677133 | 0e+00 | 0.0000141 | Downregulated |
-| B cell mediated immunity | IGHV2-70 | -4.874189 | 2e-07 | 0.0034783 | Downregulated |
-| B cell mediated immunity | IGHV4-61 | -3.377058 | 5e-07 | 0.0101461 | Downregulated |
-| B cell mediated immunity | IGHV4-39 | -3.320425 | 0e+00 | 0.0008639 | Downregulated |
-| B cell mediated immunity | IGHV3-13 | -4.337260 | 4e-07 | 0.0077142 | Downregulated |
-| B cell mediated immunity | IGHG1 | -4.433906 | 1e-07 | 0.0012100 | Downregulated |
-| B cell mediated immunity | IGHV3-66 | -2.945148 | 1e-07 | 0.0028573 | Downregulated |
-| B cell mediated immunity | IGHV3-21 | -3.092955 | 0e+00 | 0.0001148 | Downregulated |
-| B cell mediated immunity | IGHV1-69 | -3.865969 | 0e+00 | 0.0006687 | Downregulated |
-| B cell mediated immunity | IGHV4-4 | -3.403321 | 0e+00 | 0.0005561 | Downregulated |
+| B cell mediated immunity | IGHV4-34 | -4.677133 | 0 | 0.0000141 | Downregulated |
+| B cell mediated immunity | IGHV1-24 | -5.726270 | 0 | 0.0000778 | Downregulated |
+| B cell mediated immunity | FCGR3B | -6.308525 | 0 | 0.0000831 | Downregulated |
+| B cell mediated immunity | IGHV3-21 | -3.092955 | 0 | 0.0001148 | Downregulated |
+| B cell mediated immunity | IGHV1-18 | -3.127753 | 0 | 0.0001503 | Downregulated |
+| B cell mediated immunity | IGHV3-30 | -3.832882 | 0 | 0.0002844 | Downregulated |
+| B cell mediated immunity | IGHV4-28 | -3.064888 | 0 | 0.0003376 | Downregulated |
+| B cell mediated immunity | IGHV2-26 | -4.331467 | 0 | 0.0004491 | Downregulated |
+| B cell mediated immunity | IGHV4-4 | -3.403321 | 0 | 0.0005561 | Downregulated |
+| B cell mediated immunity | IGHV1-69 | -3.865969 | 0 | 0.0006687 | Downregulated |
 
 We can now annotate our heatmap’s downregulated DEGs’s over-represented
 terms. However keep in mind that these Geneids will be over-represented

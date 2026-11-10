@@ -9,7 +9,7 @@ devtools::install_github("https://github.com/rumchada/bulkanalysis_repo")
 
 **Currently Includes**:
 
-`baseline_dimreduction()`: ariance-stabilized expression values are used to calculate sample distances and principal components. The most variable genes are used for PCA, and euclidean distance visualization.
+`baseline_dimreduction()`: variance-stabilized expression values are used to calculate sample distances and principal components. The top 2000 variable features are used for PCA, and euclidean distance visualization.
 
 `edgeR_diffexp()`: Performs EdgeR based pairwise (group A vs  group B) differential expression analysis for each experimental state in the entered colData of the DeseqDataset input.
 
@@ -33,11 +33,17 @@ devtools::install_github("https://github.com/rumchada/bulkanalysis_repo")
 
   Protein-Protein Interaction Network
 
+  Add user specified feature input for heatmap function
+
+  Add Pathway network feature analysis capabilities
+  
+  Pathway Activity Inference 
+
   New ORA visuals:
 
     -Radial Upset Plot to determine which enriched term contains most DEGs
 
-    -IGraph based ORA network to determine central enriched terms 
+    -IGraph based ORA network to determine central enriched terms and control points of DEGs
 
 
 **Citations:**
